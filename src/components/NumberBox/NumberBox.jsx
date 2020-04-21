@@ -10,6 +10,7 @@ const NumberBox = ({ label, highlighted }) => {
 
   return (
     <button
+      aria-label={`${label} ${style}`}
       className={`NumberBox ${style}`}
       onClick={() => dispatch(buttonClicked(label))}
     >
