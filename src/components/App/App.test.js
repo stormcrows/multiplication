@@ -34,7 +34,5 @@ it("should set selected class on NumberBox 12 when 12 is clicked", () => {
 
   calculator.find(".NumberBox").at(11).simulate("click")
 
-  expect(
-    calculator.find(".NumberBox").at(11).hasClass("highlighted")
-  ).toBeTruthy()
+  expect(calculator.find(".NumberBox").at(11).hasClass("selected")).toBeTruthy()
 })
