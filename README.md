@@ -1,5 +1,7 @@
 # Multiplication
 
+[![CircleCI](https://circleci.com/gh/stormcrows/multiplication.svg?style=svg)](https://circleci.com/gh/stormcrows/multiplication)
+
 Educational tool to teach children about multiplication.
 
 Displays a grid of 144 numbered 1..144.
@@ -52,4 +54,3 @@ With coverage print out:
 ```bash
 npm run test:coverage
 ```
-
