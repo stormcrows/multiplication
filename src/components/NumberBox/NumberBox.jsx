@@ -4,9 +4,17 @@ import { useAppContext } from "../../AppContext"
 import { buttonClicked } from "../../actions"
 import "./NumberBox.css"
 
-const NumberBox = ({ label, highlighted }) => {
+const NumberBox = ({ label, highlighted, selected }) => {
   const dispatch = useAppContext()
-  const style = highlighted ? "highlighted" : ""
+  let style = ""
+
+  if (highlighted) {
+    style += "highlighted"
+  }
+
+  if (selected) {
+    style += " selected"
+  }
 
   return (
     <button

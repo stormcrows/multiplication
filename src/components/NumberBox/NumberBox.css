@@ -8,3 +8,7 @@
 .highlighted {
   background-color: burlywood;
 }
+
+.selected {
+  background-color: red;
+}

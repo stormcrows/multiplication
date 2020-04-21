@@ -11,11 +11,18 @@ const App = () => {
   return (
     <AppContext.Provider value={dispatch}>
       <div className="App">
-        {Object.values(state.buttons).map(({ label, highlighted }) => {
-          return (
-            <NumberBox key={label} label={label} highlighted={highlighted} />
-          )
-        })}
+        {Object.values(state.buttons).map(
+          ({ label, highlighted, selected }) => {
+            return (
+              <NumberBox
+                key={label}
+                label={label}
+                highlighted={highlighted}
+                selected={selected}
+              />
+            )
+          }
+        )}
       </div>
     </AppContext.Provider>
   )

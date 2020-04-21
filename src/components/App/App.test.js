@@ -28,3 +28,13 @@ it("should highlight 1,2,3,4,6,12 NumberBoxes when 12 is clicked", () => {
     expect(box.hasClass("highlighted")).toBeTruthy()
   })
 })
+
+it("should set selected class on NumberBox 12 when 12 is clicked", () => {
+  const calculator = mount(<App />)
+
+  calculator.find(".NumberBox").at(11).simulate("click")
+
+  expect(
+    calculator.find(".NumberBox").at(11).hasClass("highlighted")
+  ).toBeTruthy()
+})

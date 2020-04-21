@@ -15,6 +15,7 @@ const highlightReducer = (state, { type, payload }) => {
           acc.buttons[label] = {
             label,
             highlighted: isMultiple(payload, label),
+            selected: label === payload,
           }
           return acc
         },
