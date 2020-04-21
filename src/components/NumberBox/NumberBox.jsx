@@ -11,7 +11,7 @@ const NumberBox = ({ label, highlighted }) => {
   return (
     <button
       className={`NumberBox ${style}`}
-      onClick={() => dispatch(buttonClicked(Number(label)))}
+      onClick={() => dispatch(buttonClicked(label))}
     >
       {label}
     </button>

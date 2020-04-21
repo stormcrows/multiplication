@@ -2,7 +2,7 @@ const MAX_NUMBER = 144
 
 export const getInitialState = () =>
   [...new Array(MAX_NUMBER)].map((_, idx) => ({
-    label: `${idx + 1}`,
+    label: idx + 1,
     highlighted: false,
   }))
 

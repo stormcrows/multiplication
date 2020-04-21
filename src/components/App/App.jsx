@@ -13,7 +13,11 @@ const App = () => {
   return (
     <AppContext.Provider value={dispatch}>
       <div className="App">
-        <NumberBox label={144} highlighted={true} />
+        {state.map(({ label, highlighted }) => {
+          return (
+            <NumberBox key={label} label={label} highlighted={highlighted} />
+          )
+        })}
       </div>
     </AppContext.Provider>
   )
