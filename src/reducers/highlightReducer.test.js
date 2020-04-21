@@ -33,3 +33,31 @@ it("should set highlighted=true on 1,2,3,4,6,12 when 12 is clicked", () => {
 
   expect(newState).toMatchObject(expectedState)
 })
+
+it("should set highlighted=false on 1,11 when 11 is clicked second time", () => {
+  const state = getInitialState()
+
+  let newState = highlightReducer(state, {
+    type: BUTTON_CLICKED,
+    payload: 11,
+  })
+
+  newState = highlightReducer(newState, {
+    type: BUTTON_CLICKED,
+    payload: 11,
+  })
+
+  const expectedState = getInitialState()
+
+  expect(newState).toMatchObject(expectedState)
+})
+
+it("should pass-through if action other than BUTTON_CLICKED", () => {
+  const initialState = getInitialState()
+  const newState = highlightReducer(initialState, {
+    type: "unsupported-type",
+    payload: 123,
+  })
+
+  expect(newState).toMatchObject(initialState)
+})
