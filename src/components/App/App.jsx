@@ -1,19 +1,17 @@
 import React, { useReducer } from "react"
 import AppContext from "../../AppContext"
-import { combineReducers, rootReducer } from "../../reducers"
+import { getInitialState } from "../../getInitialState"
+import { highlightReducer } from "../../reducers"
 import NumberBox from "../NumberBox/NumberBox"
 import "./App.css"
 
 const App = () => {
-  const [state, dispatch] = useReducer(
-    combineReducers([rootReducer]),
-    rootReducer()
-  )
+  const [state, dispatch] = useReducer(highlightReducer, getInitialState())
 
   return (
     <AppContext.Provider value={dispatch}>
       <div className="App">
-        {state.map(({ label, highlighted }) => {
+        {Object.values(state.buttons).map(({ label, highlighted }) => {
           return (
             <NumberBox key={label} label={label} highlighted={highlighted} />
           )
