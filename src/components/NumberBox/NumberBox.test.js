@@ -4,7 +4,7 @@ import * as AppContext from "../../AppContext"
 import { BUTTON_CLICKED } from "../../actions"
 import NumberBox from "./NumberBox"
 
-it("Renders a button with provided type", () => {
+it("Renders a button with provided label", () => {
   const dispatch = jest.fn()
   jest.spyOn(AppContext, "useAppContext").mockImplementation(() => dispatch)
 
@@ -14,7 +14,7 @@ it("Renders a button with provided type", () => {
   expect(btn.text()).toBe("144")
 })
 
-it("Dispatches a * type action upon clicking a Key", () => {
+it("Dispatches a BUTTON_CLICKED type action upon clicking the Box", () => {
   const dispatch = jest.fn()
   jest.spyOn(AppContext, "useAppContext").mockImplementation(() => dispatch)
 
