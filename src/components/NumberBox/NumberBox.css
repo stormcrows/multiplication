@@ -1,6 +1,7 @@
 .NumberBox {
   text-align: center;
   vertical-align: middle;
+  border-radius: 8px;
 }
 
 .highlighted {
