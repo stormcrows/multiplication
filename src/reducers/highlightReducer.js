@@ -6,7 +6,7 @@ const isMultiple = (x, n) => x % n === 0
 const highlightReducer = (state, { type, payload }) => {
   switch (type) {
     case BUTTON_CLICKED:
-      if (state.buttons[payload].highlighted) {
+      if (state.buttons[payload].selected) {
         return getInitialState()
       }
 

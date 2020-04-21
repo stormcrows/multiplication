@@ -36,3 +36,19 @@ it("should set selected class on NumberBox 12 when 12 is clicked", () => {
 
   expect(calculator.find(".NumberBox").at(11).hasClass("selected")).toBeTruthy()
 })
+
+it("should highlight different set of NumberBoxes when 11 then 12 is clicked", () => {
+  const calculator = mount(<App />)
+  const expectedHighlights = [1, 2, 3, 4, 6, 12]
+
+  calculator.find(".NumberBox").at(10).simulate("click")
+  calculator.find(".NumberBox").at(11).simulate("click")
+
+  expect(calculator.find(".NumberBox").at(10).hasClass("selected")).toBeFalsy()
+  expect(calculator.find(".NumberBox").at(11).hasClass("selected")).toBeTruthy()
+
+  expectedHighlights.forEach((num) => {
+    const box = calculator.find(".NumberBox").at(num - 1)
+    expect(box.hasClass("highlighted")).toBeTruthy()
+  })
+})
