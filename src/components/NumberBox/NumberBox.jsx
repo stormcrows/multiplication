@@ -30,6 +30,7 @@ const NumberBox = ({ label, highlighted, selected }) => {
 NumberBox.propTypes = {
   label: PropTypes.number.isRequired,
   highlighted: PropTypes.bool,
+  selected: PropTypes.bool,
 }
 
 export default NumberBox
