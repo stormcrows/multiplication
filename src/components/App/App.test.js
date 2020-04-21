@@ -17,6 +17,14 @@ it("should display 144 NumberBoxes", () => {
   expect(boxes.length).toBe(144)
 })
 
-function code(c) {
-  return c.charCodeAt(0)
-}
+it("should highlight 1,2,3,4,6,12 NumberBoxes when 12 is clicked", () => {
+  const calculator = mount(<App />)
+  const expectedHighlights = [1, 2, 3, 4, 6, 12]
+
+  calculator.find(".NumberBox").at(11).simulate("click")
+
+  expectedHighlights.forEach((num) => {
+    const box = calculator.find(".NumberBox").at(num - 1)
+    expect(box.hasClass("highlighted")).toBeTruthy()
+  })
+})
